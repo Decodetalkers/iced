@@ -6,6 +6,7 @@ const ICON_FONT: Font = Font::with_name("icons");
 pub fn main() -> iced::Result {
     iced::application("Checkbox - Iced", Example::update, Example::view)
         .font(include_bytes!("../fonts/icons.ttf").as_slice())
+        .theme(Example::theme)
         .run()
 }
 
@@ -36,6 +37,10 @@ impl Example {
                 self.custom = custom;
             }
         }
+    }
+
+    fn theme(&self) -> iced::Theme {
+        iced::Theme::default()
     }
 
     fn view(&self) -> Element<Message> {

@@ -6,4 +6,5 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
+iced = { workspace = true, features = ["tokio"] }
+zbus = { version = "5.5.0", default-features = false, features = ["tokio"] }
